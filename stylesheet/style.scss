@@ -1,0 +1,43 @@
+@import "_variable.scss";
+@import "_animation.scss";
+$bg_color:rgb(69, 69, 69);
+body{
+  height: 100vh;
+  width: 100vw;
+  background-color: $bg_color;
+}
+.circle{
+  &_wrap{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    top: calc(50vh - 250px);
+    left: calc(50vw - 250px);
+    overflow: hidden;
+    &_hide{
+      content: "";
+      display: block;
+      background-color: $bg_color;
+      height: 500px; width: 500px;
+      z-index: 10;
+      position: absolute;
+      animation: rotate 15s linear 0s infinite normal;
+      transform-origin: 0 0;
+      top: 50%;left: 50%;
+    }
+
+  }
+
+  $size:20;
+  @for $i from 1 through 4{
+    img:nth-child(#{$i}){
+      z-index: #{$i};
+      top:#{$size / 2 * (4 - $i)}px;
+      left:#{$size / 2 * (4 - $i)}px;
+      position: absolute;
+      height: #{$i * $size + 400}px; width:#{$i * $size + 400}px;
+      opacity: 0.7;
+      animation: rotate #{$i * 10}s cubic-bezier(.58,.81,.46,.12) #{$i * 1.1 - 1.1}s infinite normal;
+    }
+  }
+}
