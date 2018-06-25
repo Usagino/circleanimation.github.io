@@ -18,4 +18,7 @@ Language, software, service used
 - Github
 
 Link
+
 https://usagino.github.io/circleanimation.github.io/
+
+You are use such as "now loading..."
